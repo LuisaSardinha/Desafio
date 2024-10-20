@@ -1,0 +1,11 @@
+Descrição Técnica:
+No arquivo main.tf, o "terraform {}" é onde as configurações do terraforms e o que o provedor escolhido vai utilizar para fornecer a infraestrutura são contidas. 
+Para cada um desses provedores o "source" define o tipo de provedor e um hostname opcional. 
+Configura-se a aws, que é um dos provedores padrões da terraforms, utilizando "hashicorp/aws"
+"provider" configura o provedor especifico, no caso do codigo previamente fornecido, é aws. Funciona como um plugin que auxilia a criar e organizar os recursos
+As variáveis são declaradas para tornar as configurações do terraform mais flexíveis, "variable" é usado para dlecarar as variáveis dentro de um bloco, "description" é a finalidade, "type" é o tipo e "default" torna a variável opcional e define um valor padrão
+Já o "resource" é utilizado para definir os componetes da infraestrutura. No caso do código fornecido consigura-se a instância EC2 e VPC IDs, que são as nuvens privadas virtuais fornecidas pela aws.
+
+Instalação do Nginx:
+No arquivo main.tf a variável user_data adicionada irá executar a instalção do docker e a execução do nginx  em um contêiner quando a instância se iniciar.
+Espera se que  ao acessar o IP, o nginx estará em execução na instância EC2
